@@ -112,7 +112,7 @@ class Piece {
                 }
 
                 if (this.y + currentRow < 0) {
-                    gameOver();
+                    // gameOver();
                     break;
                 }
 

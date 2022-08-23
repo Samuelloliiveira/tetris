@@ -3,11 +3,11 @@ const ctx = cvs.getContext("2d")
 const scoreElement = document.getElementById("score")
 const speedElement = document.getElementById("speed")
 
-const ROW = 20
-const COL = 10
-const SQ = 30
-const defaultColor = "#111111"
-const defaultBorder = "rgba(255,255,255,0.1)"
+const ROW = 21
+const COL = 11
+const SQ = 29
+const defaultColor = "#000"
+const defaultBorder = "#ffffff00"
 
 let canMove = true
 let speed = 500
@@ -25,13 +25,13 @@ for (let currentRow = 0; currentRow < ROW; currentRow++) {
 drawBoard()
 
 const PIECES = [
-    [Z,'red'],
-    [S,'green'],
-    [T,'yellow'],
-    [O,'blue'],
-    [L,'purple'],
-    [I,'cyan'],
-    [J,'orange'],
+    [Z,'#720505'],
+    [S,'#148106'],
+    [T,'#fce72d'],
+    [O,'#085a86'],
+    [L,'#5c0994'],
+    [I,'#8d0961'],
+    [J,'#993e09'],
 ]
 
 let piece = randomPiece()
