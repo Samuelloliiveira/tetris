@@ -69,12 +69,11 @@ header {
 
 #scoreboard {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
 
 canvas {
-  display: block;
-  margin: 0 auto;
+
 }
