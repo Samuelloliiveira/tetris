@@ -2,11 +2,15 @@ const cvs = document.getElementById("box")
 const ctx = cvs.getContext("2d")
 const scoreElements = document.querySelectorAll(".score")
 const speedElements = document.querySelectorAll(".speed")
-const movePiece = document.getElementById("movePiece")
+// const movePiece = document.getElementById("movePiece")
+
 const modal = document.getElementById("modal")
 const newGame = document.getElementById("newGame")
 
-console.log(movePiece)
+const buttonLeft = document.getElementById("buttonLeft")
+const buttonUp = document.getElementById("buttonUp")
+const buttonDown = document.getElementById("buttonDown")
+const buttonRight = document.getElementById("buttonRight")
 
 const ROW = 21
 const COL = 11
@@ -42,5 +46,4 @@ const PIECES = [
 let piece = randomPiece()
 
 drop()
-
-document.addEventListener("keydown", CONTROL)
+controlMobile()

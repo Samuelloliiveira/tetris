@@ -46,7 +46,25 @@ function drop() {
     requestAnimationFrame(drop)
 }
 
-function CONTROL(event) {
+function controlMobile() {
+    buttonLeft.addEventListener("click", () => {
+        piece.moveLeft()
+        dropStart = Date.now()
+    })
+    buttonRight.addEventListener("click", () => {
+        piece.moveRight()
+        dropStart = Date.now();
+    })
+    buttonUp.addEventListener("click", () => {
+        piece.rotate()
+        dropStart = Date.now();
+    })
+    buttonDown.addEventListener("click", () => {
+        piece.moveDown()
+    })
+}
+
+function control(event) {
 
     if (!canMove) {
         return false
@@ -72,6 +90,7 @@ function CONTROL(event) {
 
     const movePiece = moveFunctions[event.code]
     movePiece()
+
 }
 
 function updateRowAndScore(row) {
