@@ -20,7 +20,7 @@
                 <img src="./assets/loudspeaker.svg" alt="auto falante">
 
                 <audio loop>
-                    <source src="./music/" type="audio/mpeg">
+                    <source src="./music/tetris-theme-tetris-soundtrack.mp3" type="audio/mpeg">
                 </audio>
             </div>
         </header>
@@ -29,10 +29,10 @@
             <section>
                 <div id="scoreboard">
                     <p>
-                        Score: <span id="score"></span>
+                        Pontuação: <span id="score"></span>
                     </p>
                     <p>
-                        Speed: <span id="speed"></span>
+                        Velocidade: <span id="speed"></span>
                     </p>
                 </div>
             </section>
@@ -40,18 +40,41 @@
             <section id="gameCanva">
                 <canvas id="box" width="320" height="610"></canvas>
 
-                <p>Use os botões para mover e girar a peça ou as seta do teclado</p>
+                <p>Use as setas do teclado para mover as peças</p>
             </section>
 
             <section id="movePiece">
-                <button> E </button>
+                <button id="buttonLeft">
+                    <img src="./assets/arrow-left.svg" alt="esquerda">
+                </button>
                     <div id="buttonCenter">
-                        <button> G </button>
-                        <button> V </button>
+                        <button id="buttonUp">
+                            <img src="./assets/rotate.svg" alt="girar">
+                        </button>
+                        <button id="buttonDown">
+                            <img src="./assets/arrow-down.svg" alt="descer mais rápido">
+                        </button>
                     </div>
-                <button> D </button>
+                <button id="buttonRight">
+                    <img src="./assets/arrow-right.svg" alt="direita">
+                </button>
             </section>
         </main>
+    </div>
+
+    <div class="modal">
+        <h2>Fim de Jogo</h2>
+
+        <div id="scoreboard">
+            <p>
+                Pontuação: <span id="score"></span>
+            </p>
+            <p>
+                Velocidade: <span id="speed"></span>
+            </p>
+        </div>
+
+        <button class="button">Jogar novamente</button>
     </div>
 
     <script src="scripts/music.js"></script>

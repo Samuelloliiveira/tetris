@@ -2,6 +2,9 @@ const cvs = document.getElementById("box")
 const ctx = cvs.getContext("2d")
 const scoreElement = document.getElementById("score")
 const speedElement = document.getElementById("speed")
+const movePiece = document.getElementById("movePiece")
+
+console.log(movePiece)
 
 const ROW = 21
 const COL = 11

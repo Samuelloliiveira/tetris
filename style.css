@@ -10,13 +10,14 @@ body {
   height: 100vh;
  
   display: flex;
+  align-items: center;
   justify-content: center;
 
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(45deg, #320b66, #121214);
 
   text-align: center;
-  color: #afacac;
+  color: white;
 }
 
 h1 {
@@ -72,7 +73,7 @@ header {
   display: flex;
   justify-content: space-around;
   margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 #score {
@@ -90,7 +91,7 @@ header {
 canvas {
   width: 20rem;
   height: 30rem;
-  border: 20px solid gray;
+  border: 20px solid darkgrey;
 }
 
 #movePiece {
@@ -114,6 +115,51 @@ canvas {
 
 #movePiece #buttonCenter button:nth-child(2) {
   margin-top: 1rem;
+}
+
+button img {
+  max-width: 1rem;
+}
+
+.modal {
+  width: 16.4rem;
+  height: 26rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: absolute;
+  
+  background: #320b66;
+  border: 3px double #67159c;
+  color: white;
+  border-radius: .5rem;
+
+  text-align: center;
+  font-weight: bold;
+
+  transition: transform 1s;
+  transform: scale(.5);
+
+  visibility: hidden;
+}
+
+.modal button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+
+  background: #2c86b6;
+  color: white;
+}
+
+.modal.active {
+  transform: scale(1);
+  visibility: visible;
 }
 
 @media (min-width: 414px) {
