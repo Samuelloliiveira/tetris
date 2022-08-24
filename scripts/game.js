@@ -1,8 +1,10 @@
 const cvs = document.getElementById("box")
 const ctx = cvs.getContext("2d")
-const scoreElement = document.getElementById("score")
-const speedElement = document.getElementById("speed")
+const scoreElements = document.querySelectorAll(".score")
+const speedElements = document.querySelectorAll(".speed")
 const movePiece = document.getElementById("movePiece")
+const modal = document.getElementById("modal")
+const newGame = document.getElementById("newGame")
 
 console.log(movePiece)
 

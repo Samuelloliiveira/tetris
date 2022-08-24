@@ -76,11 +76,11 @@ header {
   font-size: 1rem;
 }
 
-#score {
+.score {
   color:#148106;
 }
 
-#speed {
+.speed {
   color: #085a86;
 }
 
@@ -121,7 +121,7 @@ button img {
   max-width: 1rem;
 }
 
-.modal {
+#modal {
   width: 16.4rem;
   height: 26rem;
   padding: 1.5rem;
@@ -146,7 +146,7 @@ button img {
   visibility: hidden;
 }
 
-.modal button {
+#modal button {
   padding: 0.8rem;
   border: none;
   border-radius: 0.3rem;
@@ -157,7 +157,7 @@ button img {
   color: white;
 }
 
-.modal.active {
+#modal.active {
   transform: scale(1);
   visibility: visible;
 }

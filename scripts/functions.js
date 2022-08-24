@@ -1,28 +1,33 @@
 function drawBoard() {
     for (let currentRow = 0; currentRow < ROW; currentRow++) {
-        for(let currentCol = 0; currentCol < COL; currentCol++) {
-            const currentSquareColor = board[currentRow][currentCol];
-            drawSquare(currentRow, currentCol, currentSquareColor);
+        for (let currentCol = 0; currentCol < COL; currentCol++) {
+            const currentSquareColor = board[currentRow][currentCol]
+            drawSquare(currentRow, currentCol, currentSquareColor)
         }
     }
 
-    scoreElement.innerHTML = score;
-    speedElement.innerHTML = speed;
+    for (const scoreElement of scoreElements) {
+        scoreElement.innerHTML = score
+    }
+
+    for (const speedElement of speedElements) {
+        speedElement.innerHTML = speed
+    }
 }
 
 function drawSquare(y, x, color) {
-    ctx.fillStyle = color;
-    ctx.fillRect(x * SQ, y * SQ, SQ, SQ);
+    ctx.fillStyle = color
+    ctx.fillRect(x * SQ, y * SQ, SQ, SQ)
 
     if (color == defaultColor) {
-        ctx.strokeStyle = defaultBorder;
+        ctx.strokeStyle = defaultBorder
     }
 
-    ctx.strokeRect(x * SQ, y * SQ, SQ, SQ);
+    ctx.strokeRect(x * SQ, y * SQ, SQ, SQ)
 }
 
 function randomPiece() {
-    const randomPieceNumber = Math.floor(Math.random() * PIECES.length);
+    const randomPieceNumber = Math.floor(Math.random() * PIECES.length)
     return new Piece(
         PIECES[randomPieceNumber][0],
         PIECES[randomPieceNumber][1],
@@ -30,92 +35,93 @@ function randomPiece() {
 }
 
 function drop() {
-    const now = Date.now();
-    const delta = now - dropStart;
+    const now = Date.now()
+    const delta = now - dropStart
 
     if (delta > speed) {
-        piece.moveDown();
-        dropStart = Date.now();
+        piece.moveDown()
+        dropStart = Date.now()
     }
 
-    requestAnimationFrame(drop);
+    requestAnimationFrame(drop)
 }
 
 function CONTROL(event) {
 
     if (!canMove) {
-        return false;
+        return false
     }
 
     const moveFunctions = {
         ArrowLeft() {
-            piece.moveLeft();
+            piece.moveLeft()
             dropStart = Date.now();
         },
         ArrowRight() {
-            piece.moveRight();
+            piece.moveRight()
             dropStart = Date.now();
         },
         ArrowUp() {
-            piece.rotate();
+            piece.rotate()
             dropStart = Date.now();
         },
         ArrowDown() {
-            piece.moveDown();
+            piece.moveDown()
         }
     };
 
-    const movePiece = moveFunctions[event.code];
-    movePiece();
+    const movePiece = moveFunctions[event.code]
+    movePiece()
 }
 
 function updateRowAndScore(row) {
-    canMove = false;
+    canMove = false
 
     for (let y = row; y > 1; y--) {
         for (let currentCol = 0; currentCol < COL; currentCol++) {
-            removeRow(y, currentCol);
+            removeRow(y, currentCol)
         }
     }
 
     for (let currentCol = 0; currentCol < COL; currentCol++) {
-        board[0][currentCol] = defaultColor;
+        board[0][currentCol] = defaultColor
     }
 
-    score += 10;
+    score += 10
 
     if (speed > 100) {
-        speed -= 20;
+        speed -= 20
     }
 
-    canMove = true;
+    canMove = true
 }
 
 function removeRow(rowToRemove, colToRemove) {
-    board[rowToRemove][colToRemove] = board[rowToRemove - 1][colToRemove];
+    board[rowToRemove][colToRemove] = board[rowToRemove - 1][colToRemove]
 }
 
 function gameOver() {
-    let warning = confirm("Game over! Continue?");
+    modal.classList.add("active")
 
-    if (warning) {
-        resetGame();
-    }
+    newGame.addEventListener("click", () => {
+        resetGame()
+        modal.classList.remove("active")
+    })
 }
 
 function resetGame() {
     speed = 500;
-    dropStart = Date.now();
-    score = 0;
+    dropStart = Date.now()
+    score = 0
 
-    board = [];
+    board = []
     for (let currentRow = 0; currentRow < ROW; currentRow++) {
         board[currentRow] = [];
-        for(let currentCol = 0; currentCol < COL; currentCol++) {
-            board[currentRow][currentCol] = defaultColor;
+        for (let currentCol = 0; currentCol < COL; currentCol++) {
+            board[currentRow][currentCol] = defaultColor
         }
     }
 
-    piece = randomPiece();
-    drawBoard();
+    piece = randomPiece()
+    drawBoard()
 }
