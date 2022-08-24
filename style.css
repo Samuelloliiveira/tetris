@@ -8,14 +8,15 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: #121214;
-
+ 
   display: flex;
   justify-content: center;
 
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(45deg, #320b66, #121214);
-  color: white;
+
+  text-align: center;
+  color: #afacac;
 }
 
 h1 {
@@ -82,8 +83,53 @@ header {
   color: #085a86;
 }
 
+#gameCanva p {
+  display: none;
+}
+
 canvas {
   width: 20rem;
-  height: 33rem;
+  height: 30rem;
   border: 20px solid gray;
+}
+
+#movePiece {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#movePiece button {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  border-style: solid;
+  cursor: pointer;
+}
+
+#movePiece #buttonCenter button {
+  display: flex;
+}
+
+#movePiece #buttonCenter button:nth-child(2) {
+  margin-top: 1rem;
+}
+
+@media (min-width: 414px) {
+  canvas {
+    width: 22rem;
+    height: 33rem;
+  }
+}
+
+@media (min-width: 920px) {
+  #gameCanva p {
+    display: block;
+  }
+
+  canvas {
+    width: 24rem;
+    height: 38rem;
+  }
 }
