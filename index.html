@@ -13,54 +13,52 @@
 </head>
 
 <body>
-    <div class="wrap">
-        <header>
-            <h1>Tetris</h1>
-            <div id="audio">
-                <img src="./assets/loudspeaker.svg" alt="auto falante">
+    <header>
+        <h1>Tetris</h1>
+        <div id="audio">
+            <img src="./assets/loudspeaker.svg" alt="auto falante">
 
-                <audio loop>
-                    <source src="./music/tetris-theme-tetris-soundtrack.mp3" type="audio/mpeg">
-                </audio>
+            <audio loop>
+                <source src="./music/tetris-theme-tetris-soundtrack.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div id="scoreboard">
+                <p>
+                    Pontuação: <span class="score"></span>
+                </p>
+                <p>
+                    Velocidade: <span class="speed"></span>
+                </p>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <section>
-                <div id="scoreboard">
-                    <p>
-                        Pontuação: <span class="score"></span>
-                    </p>
-                    <p>
-                        Velocidade: <span class="speed"></span>
-                    </p>
-                </div>
-            </section>
+        <section id="gameCanva">
+            <canvas id="box" width="320" height="610"></canvas>
 
-            <section id="gameCanva">
-                <canvas id="box" width="320" height="610"></canvas>
+            <p>Use as setas do teclado para mover as peças</p>
+        </section>
 
-                <p>Use as setas do teclado para mover as peças</p>
-            </section>
-
-            <section id="movePiece">
-                <button id="buttonLeft">
-                    <img src="./assets/arrow-left.svg" alt="esquerda">
+        <section id="movePiece">
+            <button id="buttonLeft">
+                <img src="./assets/arrow-left.svg" alt="esquerda">
+            </button>
+            <div id="buttonCenter">
+                <button id="buttonUp">
+                    <img src="./assets/rotate.svg" alt="girar">
                 </button>
-                    <div id="buttonCenter">
-                        <button id="buttonUp">
-                            <img src="./assets/rotate.svg" alt="girar">
-                        </button>
-                        <button id="buttonDown">
-                            <img src="./assets/arrow-down.svg" alt="descer mais rápido">
-                        </button>
-                    </div>
-                <button id="buttonRight">
-                    <img src="./assets/arrow-right.svg" alt="direita">
+                <button id="buttonDown">
+                    <img src="./assets/arrow-down.svg" alt="descer mais rápido">
                 </button>
-            </section>
-        </main>
-    </div>
+            </div>
+            <button id="buttonRight">
+                <img src="./assets/arrow-right.svg" alt="direita">
+            </button>
+        </section>
+    </main>
 
     <div id="modal">
         <h2>Fim de Jogo</h2>
