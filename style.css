@@ -70,6 +70,7 @@ header {
 #scoreboard {
   display: flex;
   justify-content: space-around;
+  gap: 2rem;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -101,7 +102,7 @@ canvas {
 }
 
 #movePiece button {
-  padding: 0.7rem;
+  padding: 1rem;
   border-radius: 0.4rem;
   border-style: solid;
   cursor: pointer;
@@ -121,9 +122,9 @@ button img {
 
 #modal {
   width: 16.4rem;
-  height: 26rem;
+  height: 35rem;
   padding: 1.5rem;
-  top: 6rem;
+  top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,20 +162,46 @@ button img {
   visibility: visible;
 }
 
-@media (min-width: 414px) {
+@media (min-width: 360px) {
   canvas {
-    width: 22rem;
-    height: 33rem;
+    width: 19rem;
+    height: 30rem;
+  }
+
+  #scoreboard {
+    font-size: 1.3rem;
+  }
+
+  #modal {
+    width: 20.4rem;
+    height: 40rem;
   }
 }
 
-@media (min-width: 920px) {
+@media (min-width: 414px) {
+  canvas {
+    width: 20rem;
+    height: 33rem;
+  }
+  
+  #modal {
+    width: 22.4rem;
+    height: 43rem;
+  }
+} 
+
+@media (min-width: 768px) {
+  canvas {
+    width: 24rem;
+    height: 37rem;
+  }
+
   #gameCanva p {
     display: block;
   }
 
-  canvas {
-    width: 24rem;
-    height: 38rem;
+  #modal {
+    width: 24.4rem;
+    height: 48rem;
   }
 }

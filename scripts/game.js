@@ -47,3 +47,4 @@ let piece = randomPiece()
 
 drop()
 controlMobile()
+document.addEventListener("keydown", control) 
